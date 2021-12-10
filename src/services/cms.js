@@ -1,10 +1,12 @@
 import { createClient } from 'contentful';
 
-const createCmsClient = () =>
-  createClient({
-    space: '84wwkpwxe46m',
+const createCmsClient = () => {
+  console.log(process.env.REACT_APP_SPACE_ID);
+  return createClient({
+    space: process.env.REACT_APP_SPACE_ID,
     environment: 'master',
-    accessToken: 'TvnuNY1Uusfl3U55oKlDrDXL1ivmbhnhLo-63tAu4bI'
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN
   });
+};
 
 export { createCmsClient };

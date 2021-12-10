@@ -19,7 +19,7 @@ const Home = () => {
   }, [client]);
 
   if (!page) return null;
-  console.log(page.items[0].fields.mainHero.fields);
+
   return (
     <Main>
       <Hero client={client} fields={page.items[0].fields.mainHero.fields} />
