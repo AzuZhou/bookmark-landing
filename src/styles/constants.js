@@ -14,4 +14,6 @@ const FONT_WEIGHTS = {
   MEDIUM: 500
 };
 
-export { COLORS, FONT_SIZES, FONT_WEIGHTS };
+const desktopBreakpoint = '@media screen and (min-width: 1025px)';
+
+export { COLORS, FONT_SIZES, FONT_WEIGHTS, desktopBreakpoint };
