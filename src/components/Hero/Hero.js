@@ -1,43 +1,44 @@
-import { useState, useEffect, useRef } from 'react';
+import { useContext } from 'react';
 
+import { ContentContext } from 'context/ContentContext';
+
+import Button from 'components/shared/Button';
 import { Section, Info, Decoration, Img } from './styled';
 
-const Hero = ({ fields: { title, description, ctAs, image, imageAlignment }, client }) => {
-  const [primaryBtn, setPrimaryBtn] = useState();
-  const [secondatyBtn, setSecondaryBtn] = useState();
-  const imgRef = useRef();
+const Hero = () => {
+  const { page } = useContext(ContentContext);
+  const { mainHero } = page || {};
+  const { title, description, ctAs, image, imageAlignment } = mainHero || {};
+  const { url, width, height } = image || {};
 
-  useEffect(() => {
-    // TODO: fetch at the same time Promise.all
-    ctAs.forEach((cta) => {
-      client.getEntries({ 'sys.id': cta.sys.id }).then((entries) => {
-        if (entries.items[0].fields.isPrimaryCta) {
-          setPrimaryBtn(entries);
-        } else {
-          setSecondaryBtn(entries);
-        }
-      });
-    });
-
-    // TODO: throttle on screen resize
-    imgRef.current = document.getElementById('hero-img');
-  }, []);
+  // TODO: handle decoration element
+  // const imgRef = useRef();
+  // useEffect(() => {
+  //   // TODO: throttle on screen resize
+  //   imgRef.current = document.getElementById('hero-img');
+  // }, []);
 
   return (
     <Section>
       <Info>
         <h1>{title}</h1>
         <p>{description}</p>
-        {primaryBtn !== undefined && (
-          <a href={primaryBtn.items[0].fields.link}>{primaryBtn.items[0].fields.label}</a>
-        )}
-        {secondatyBtn !== undefined && (
-          <a href={primaryBtn.items[0].fields.link}>{primaryBtn.items[0].fields.label}</a>
-        )}
+
+        {ctAs ? ctAs.map((cta) => <Button key={cta.label} {...cta} />) : null}
       </Info>
       <Decoration>
-        <Img id="hero-img" src={image.fields.file.url} alt="" alignment={imageAlignment} />
-        {imgRef.current && (
+        {url && (
+          <Img
+            id="hero-img"
+            width={width}
+            height={height}
+            src={url}
+            alt=""
+            alignment={imageAlignment}
+          />
+        )}
+
+        {/* {imgRef.current && (
           <div
             style={{
               bottom: `-${window.innerWidth - imgRef.current.getBoundingClientRect().right}px`,
@@ -46,7 +47,7 @@ const Hero = ({ fields: { title, description, ctAs, image, imageAlignment }, cli
             }}
             id="hero-shadow"
           />
-        )}
+        )} */}
       </Decoration>
     </Section>
   );

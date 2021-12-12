@@ -2,7 +2,9 @@ const COLORS = {
   SOFT_BLUE: 'hsl(231, 69%, 60%)',
   SOFT_RED: 'hsl(0, 94%, 66%)',
   GREYISH_BLUE: 'hsl(229, 8%, 60%)',
-  DARK_BLUE: 'hsl(229, 31%, 21%)'
+  DARK_BLUE: 'hsl(229, 31%, 21%)',
+  WHITE: 'hsl(0, 0%, 100%);',
+  LIGHT_GREY: 'hsl(64, 44%, 94%);'
 };
 
 const FONT_SIZES = {
@@ -14,6 +16,4 @@ const FONT_WEIGHTS = {
   MEDIUM: 500
 };
 
-const desktopBreakpoint = '@media screen and (min-width: 1025px)';
-
-export { COLORS, FONT_SIZES, FONT_WEIGHTS, desktopBreakpoint };
+export { COLORS, FONT_SIZES, FONT_WEIGHTS };

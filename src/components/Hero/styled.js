@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
-import { desktopBreakpoint, COLORS } from 'styles/constants';
+import { COLORS } from 'styles/constants';
+import { desktopBreakpoint } from 'styles/styled';
 
 const Section = styled.section`
   display: flex;
@@ -46,7 +48,7 @@ const Decoration = styled.div`
   }
 `;
 
-const Img = styled.img`
+const Img = styled(Image)`
   width: 100%;
 `;
 
