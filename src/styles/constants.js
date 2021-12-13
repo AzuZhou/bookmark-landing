@@ -11,14 +11,14 @@ const FONT_SIZES = {
   MOBILE: {
     SECONDARY_TEXT: '12px',
     PRIMARY_TEXT: '16px',
-    SUBTITLE: '24px',
-    TITLE: '34px'
+    SUBTITLE: '22px',
+    TITLE: '32px'
   },
   DESKTOP: {
     SECONDARY_TEXT: '14px',
     PRIMARY_TEXT: '18px',
-    SUBTITLE: '34px',
-    TITLE: '44px'
+    SUBTITLE: '32px',
+    TITLE: '42px'
   }
 };
 

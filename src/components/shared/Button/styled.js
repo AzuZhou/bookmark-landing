@@ -10,7 +10,6 @@ const Container = styled.a`
   max-width: 150px;
   padding: 12px 16px;
 
-  white-space: nowrap;
   border-radius: 4px;
   border: 2px solid transparent;
   ${(props) =>

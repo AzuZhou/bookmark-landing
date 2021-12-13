@@ -3,12 +3,13 @@ import { useContext } from 'react';
 import { ContentContext } from 'context/ContentContext';
 
 import Button from 'components/shared/Button';
-import { Section, Info, Decoration, Img } from './styled';
+
+import { Info } from 'styles/styled';
+import { Section, Decoration, Img } from './styled';
 
 const Hero = () => {
   const { page } = useContext(ContentContext);
   const { mainHero } = page || {};
-  console.log('mainHero: ', mainHero);
   const { title, description, ctAsCollection, image, imageAlignment } = mainHero || {};
   const { items: ctAs } = ctAsCollection || [];
   const { url, width, height } = image || {};
@@ -22,11 +23,17 @@ const Hero = () => {
 
   return (
     <Section>
-      <Info>
+      <Info isTitle>
         <h1>{title}</h1>
         <p>{description}</p>
 
-        <div>{ctAs ? ctAs.map((cta) => <Button key={cta.label} {...cta} />) : null}</div>
+        {ctAs ? (
+          <div>
+            {ctAs.map((cta) => (
+              <Button key={cta.label} {...cta} />
+            ))}
+          </div>
+        ) : null}
       </Info>
 
       <Decoration>

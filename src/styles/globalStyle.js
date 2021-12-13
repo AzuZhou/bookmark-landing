@@ -45,9 +45,11 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     font-size: ${FONT_SIZES.MOBILE.SECONDARY_TEXT};
     font-weight: ${FONT_WEIGHTS.MEDIUM};
+    line-height: 20px;
 
     ${desktopBreakpoint} {
       font-size: ${FONT_SIZES.DESKTOP.SECONDARY_TEXT};
+      line-height: 22px;
     }
   }
 
@@ -55,10 +57,16 @@ const GlobalStyle = createGlobalStyle`
     color: ${COLORS.GREYISH_BLUE};
     font-size: ${FONT_SIZES.MOBILE.PRIMARY_TEXT};
     font-weight: ${FONT_WEIGHTS.REGULAR};
+    line-height: 24px;
 
     ${desktopBreakpoint} {
       font-size: ${FONT_SIZES.DESKTOP.PRIMARY_TEXT};
+      line-height: 26px;
     }
+  }
+
+  button, a  {
+    white-space: nowrap;
   }
 `;
 

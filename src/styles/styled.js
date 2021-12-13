@@ -1,16 +1,80 @@
 import styled, { css } from 'styled-components';
 
 import {
-  COLORS
-  //  FONT_SIZES, FONT_WEIGHTS
+  COLORS,
+  FONT_SIZES
+  //FONT_WEIGHTS
 } from './constants';
+
+const desktopBreakpoint = '@media screen and (min-width: 1025px)';
 
 const Main = styled.main`
   position: relative;
   width: 100vw;
+  margin: 40px 0;
+
+  > section ~ section {
+    margin-top: 80px;
+  }
+
+  ${desktopBreakpoint} {
+    margin: 60px 0;
+
+    > section ~ section {
+      margin-top: 120px;
+    }
+  }
 `;
 
-const desktopBreakpoint = '@media screen and (min-width: 1025px)';
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  h1 {
+    text-align: center;
+    font-size: ${FONT_SIZES.MOBILE.TITLE};
+    line-height: 42px;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: ${FONT_SIZES.MOBILE.SUBTITLE};
+    line-height: 32px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  ${desktopBreakpoint} {
+    align-items: ${(props) => (props.isTitle ? 'flex-start' : 'center')};
+
+    h1 {
+      font-size: ${FONT_SIZES.DESKTOP.TITLE};
+      text-align: left;
+    }
+
+    h2 {
+      font-size: ${FONT_SIZES.DESKTOP.SUBTITLE};
+    }
+
+    p {
+      text-align: ${(props) => (props.isTitle ? 'left' : 'center')};
+      max-width: ${(props) => (props.isTitle ? 'none' : '50%')};
+    }
+  }
+`;
 
 const getButtonStyles = (backgroundColor, color, isPrimary) =>
   css`
@@ -34,4 +98,4 @@ const secondaryButton = getButtonStyles(COLORS.LIGHT_GREY, COLORS.DARK_BLUE, fal
 
 const submitButton = getButtonStyles(COLORS.SOFT_RED, COLORS.WHITE, true);
 
-export { Main, primaryButton, secondaryButton, submitButton, desktopBreakpoint };
+export { desktopBreakpoint, Main, Info, primaryButton, secondaryButton, submitButton };
