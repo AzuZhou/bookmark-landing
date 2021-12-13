@@ -8,7 +8,8 @@ import { Section, Info, Decoration, Img } from './styled';
 const Hero = () => {
   const { page } = useContext(ContentContext);
   const { mainHero } = page || {};
-  const { title, description, ctAs, image, imageAlignment } = mainHero || {};
+  const { title, description, ctAsCollection, image, imageAlignment } = mainHero || {};
+  const { items: ctAs } = ctAsCollection || [];
   const { url, width, height } = image || {};
 
   // TODO: handle decoration element
