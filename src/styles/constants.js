@@ -3,8 +3,9 @@ const COLORS = {
   SOFT_RED: 'hsl(0, 94%, 66%)',
   GREYISH_BLUE: 'hsl(229, 8%, 60%)',
   DARK_BLUE: 'hsl(229, 31%, 21%)',
-  WHITE: 'hsl(0, 0%, 100%);',
-  LIGHT_GREY: 'hsl(64, 44%, 94%);'
+  WHITE: 'hsl(0, 0%, 100%)',
+  LIGHT_GREY: 'hsl(64, 44%, 94%)',
+  SHADOW_BLUE: 'hsl(231, 69%, 92%)'
 };
 
 const FONT_SIZES = {

@@ -44,7 +44,7 @@ const Info = styled.div`
     text-align: center;
     font-size: ${FONT_SIZES.MOBILE.SUBTITLE};
     line-height: 32px;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
   }
 
   p {

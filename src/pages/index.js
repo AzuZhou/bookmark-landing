@@ -1,6 +1,7 @@
 import Layout from 'components/Layout';
 import Hero from 'components/Hero';
 import Features from 'components/Features';
+import Extensions from 'components/Extensions';
 
 import { ContentContext } from 'context/ContentContext';
 import { fetchContent } from 'services/cms';
@@ -14,6 +15,7 @@ const Home = ({ content: { page, settings } = {} }) => {
         <Main>
           <Hero />
           <Features />
+          <Extensions />
         </Main>
       </Layout>
     </ContentContext.Provider>

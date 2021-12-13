@@ -13,7 +13,6 @@ const Section = styled.section`
   width: 100%;
   padding: 0 ${PADDING.MOBILE};
   margin: 0 auto;
-  min-height: 450px;
 
   ${desktopBreakpoint} {
     flex-direction: ${({ isReverse }) => (isReverse ? 'row-reverse' : 'row')};

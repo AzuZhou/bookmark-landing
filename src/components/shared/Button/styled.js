@@ -7,7 +7,7 @@ const Container = styled.a`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 150px;
+  max-width: ${({ fullWidth }) => (fullWidth ? 'none' : '150px')};
   padding: 12px 16px;
 
   border-radius: 4px;
