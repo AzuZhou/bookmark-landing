@@ -6,7 +6,6 @@ import { Container, Tab } from './styled';
 
 const Tabs = ({ tabs }) => {
   const [activeTabKey, setActiveTabKey] = useState(0);
-  //   console.log('tabs: ', tabs);
 
   // TODO: loaders
   if (!tabs) <div>...Loading</div>;

@@ -10,11 +10,13 @@ const Section = styled.section`
   flex-direction: column-reverse;
   gap: 30px;
   max-width: 1200px;
+  width: 100%;
   padding: 0 ${PADDING.MOBILE};
   margin: 0 auto;
+  min-height: 450px;
 
   ${desktopBreakpoint} {
-    flex-direction: row;
+    flex-direction: ${({ isReverse }) => (isReverse ? 'row-reverse' : 'row')};
     padding: 0 ${PADDING.DESKTOP};
   }
 `;
@@ -40,6 +42,10 @@ const Decoration = styled.div`
 
 const Img = styled(Image)`
   width: 100%;
+
+  ${desktopBreakpoint} {
+    width: 50%;
+  }
 `;
 
 export { Section, Decoration, Img };

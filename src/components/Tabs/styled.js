@@ -5,6 +5,10 @@ import { desktopBreakpoint } from 'styles/styled';
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 
   > div {
     display: flex;
@@ -21,9 +25,8 @@ const Container = styled.div`
   }
 
   ${desktopBreakpoint} {
-    max-width: 50%;
-
     > div {
+      max-width: 50%;
       flex-direction: row;
 
       > hr {
@@ -46,8 +49,8 @@ const Tab = styled.button`
 
     transition: border-bottom 0.2s linear;
 
-    ${(props) =>
-      props.isActive &&
+    ${({ isActive }) =>
+      isActive &&
       `&:after {
           content: '';
           position: absolute;
@@ -70,7 +73,7 @@ const Tab = styled.button`
     span {
       width: 100%;
 
-      border-bottom: 4px solid ${(props) => (props.isActive ? COLORS.SOFT_RED : 'transparent')};
+      border-bottom: 4px solid ${({ isActive }) => (isActive ? COLORS.SOFT_RED : 'transparent')};
 
       &:after {
         content: none;

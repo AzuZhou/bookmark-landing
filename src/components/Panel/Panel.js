@@ -1,6 +1,7 @@
-import { Section } from './styled';
+import Detail from 'components/shared/Detail';
 
-const Panel = () => {
-  return <Section></Section>;
+const Panel = ({ activeTab }) => {
+  return <Detail data={activeTab.tabContent} />;
 };
+
 export default Panel;

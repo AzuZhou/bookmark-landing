@@ -15,10 +15,11 @@ const Features = () => {
 
   return (
     <Section>
-      <Info>
+      <Info isCenter>
         <h2>{title}</h2>
         <p>{description}</p>
       </Info>
+
       <Tabs tabs={tabs} />
     </Section>
   );

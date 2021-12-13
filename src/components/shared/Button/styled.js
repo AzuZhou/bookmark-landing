@@ -12,12 +12,8 @@ const Container = styled.a`
 
   border-radius: 4px;
   border: 2px solid transparent;
-  ${(props) =>
-    props.isPrimaryCta && props.isSubmit
-      ? submitButton
-      : props.isPrimaryCta
-      ? primaryButton
-      : secondaryButton}
+  ${({ isPrimaryCta, isSubmit }) =>
+    isPrimaryCta && isSubmit ? submitButton : isPrimaryCta ? primaryButton : secondaryButton}
 `;
 
 export { Container };

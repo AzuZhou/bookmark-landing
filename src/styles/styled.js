@@ -27,6 +27,7 @@ const Main = styled.main`
 `;
 
 const Info = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +59,9 @@ const Info = styled.div`
   }
 
   ${desktopBreakpoint} {
-    align-items: ${(props) => (props.isTitle ? 'flex-start' : 'center')};
+    max-width: 50%;
+    align-items: ${({ isReverse, isCenter }) =>
+      isCenter ? 'center' : isReverse ? 'flex-end' : 'flex-start'};
 
     h1 {
       font-size: ${FONT_SIZES.DESKTOP.TITLE};
@@ -70,8 +73,8 @@ const Info = styled.div`
     }
 
     p {
-      text-align: ${(props) => (props.isTitle ? 'left' : 'center')};
-      max-width: ${(props) => (props.isTitle ? 'none' : '50%')};
+      text-align: ${({ isReverse, isCenter }) =>
+        isCenter ? 'center' : isReverse ? 'right' : 'left'};
     }
   }
 `;
