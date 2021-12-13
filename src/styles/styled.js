@@ -10,16 +10,28 @@ const Main = styled.main`
   width: 100vw;
 `;
 
-const primaryButton = css`
-  background-color: ${COLORS.SOFT_BLUE};
-  color: ${COLORS.WHITE};
-`;
-
-const secondaryButton = css`
-  background-color: ${COLORS.LIGHT_GREY};
-  color: ${COLORS.DARK_BLUE};
-`;
-
 const desktopBreakpoint = '@media screen and (min-width: 1025px)';
 
-export { Main, primaryButton, secondaryButton, desktopBreakpoint };
+const getButtonStyles = (backgroundColor, color, isPrimary) =>
+  css`
+    background-color: ${backgroundColor};
+    color: ${color};
+    border-color: ${backgroundColor};
+    transition: background-color 0.2s linear, color 0.2s linear, border-color 0.2s linear;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: ${COLORS.WHITE};
+      color: ${isPrimary ? backgroundColor : color};
+      border-color: ${isPrimary ? backgroundColor : color};
+    }
+  `;
+
+const primaryButton = getButtonStyles(COLORS.SOFT_BLUE, COLORS.WHITE, true);
+
+const secondaryButton = getButtonStyles(COLORS.LIGHT_GREY, COLORS.DARK_BLUE, false);
+
+const submitButton = getButtonStyles(COLORS.SOFT_RED, COLORS.WHITE, true);
+
+export { Main, primaryButton, secondaryButton, submitButton, desktopBreakpoint };

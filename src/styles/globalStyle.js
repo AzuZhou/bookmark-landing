@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 import { COLORS, FONT_SIZES, FONT_WEIGHTS } from './constants';
 
+import { desktopBreakpoint } from './styled';
+
 // - Mobile: 375px
 // - Desktop: 1440px
 
@@ -30,24 +32,33 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    cursor: pointer;
-
-    &:visited, &:active, &:focus {
-      color: ${COLORS.SOFT_RED};
-    }
   }
 
   button {
-    cursor: pointer;
     margin: 0;
     padding: 0;
     border: none;
     background: transparent;
   }
  
-  p, span, a {
-    font-size: ${FONT_SIZES.DEFAULT}
-    font-weight: ${FONT_WEIGHTS.REGULAR}
+  button, a {
+    cursor: pointer;
+    font-size: ${FONT_SIZES.MOBILE.SECONDARY_TEXT};
+    font-weight: ${FONT_WEIGHTS.MEDIUM};
+
+    ${desktopBreakpoint} {
+      font-size: ${FONT_SIZES.DESKTOP.SECONDARY_TEXT};
+    }
+  }
+
+  p, span {
+    color: ${COLORS.GREYISH_BLUE};
+    font-size: ${FONT_SIZES.MOBILE.PRIMARY_TEXT};
+    font-weight: ${FONT_WEIGHTS.REGULAR};
+
+    ${desktopBreakpoint} {
+      font-size: ${FONT_SIZES.DESKTOP.PRIMARY_TEXT};
+    }
   }
 `;
 

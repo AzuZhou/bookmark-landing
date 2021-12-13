@@ -8,6 +8,7 @@ import { Section, Info, Decoration, Img } from './styled';
 const Hero = () => {
   const { page } = useContext(ContentContext);
   const { mainHero } = page || {};
+  console.log('mainHero: ', mainHero);
   const { title, description, ctAsCollection, image, imageAlignment } = mainHero || {};
   const { items: ctAs } = ctAsCollection || [];
   const { url, width, height } = image || {};
@@ -25,8 +26,9 @@ const Hero = () => {
         <h1>{title}</h1>
         <p>{description}</p>
 
-        {ctAs ? ctAs.map((cta) => <Button key={cta.label} {...cta} />) : null}
+        <div>{ctAs ? ctAs.map((cta) => <Button key={cta.label} {...cta} />) : null}</div>
       </Info>
+
       <Decoration>
         {url && (
           <Img

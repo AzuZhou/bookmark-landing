@@ -8,7 +8,18 @@ const COLORS = {
 };
 
 const FONT_SIZES = {
-  DEFAULT: '18px'
+  MOBILE: {
+    SECONDARY_TEXT: '12px',
+    PRIMARY_TEXT: '16px',
+    SUBTITLE: '24px',
+    TITLE: '34px'
+  },
+  DESKTOP: {
+    SECONDARY_TEXT: '14px',
+    PRIMARY_TEXT: '18px',
+    SUBTITLE: '34px',
+    TITLE: '44px'
+  }
 };
 
 const FONT_WEIGHTS = {
@@ -16,4 +27,9 @@ const FONT_WEIGHTS = {
   MEDIUM: 500
 };
 
-export { COLORS, FONT_SIZES, FONT_WEIGHTS };
+const PADDING = {
+  DESKTOP: '30px',
+  MOBILE: '20px'
+};
+
+export { COLORS, FONT_SIZES, FONT_WEIGHTS, PADDING };
