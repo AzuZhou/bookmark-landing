@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   width: 260px;
 
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: ${COLORS.SHADOW_BLUE} 0px 4px 12px;
 
   > div:first-child {
@@ -31,19 +31,6 @@ const Container = styled.div`
 
     span {
       font-size: ${FONT_SIZES.MOBILE.SECONDARY_TEXT};
-    }
-  }
-
-  > span {
-    display: inline-flex;
-    width: 100%;
-    height: 4px;
-
-    div {
-      width: 4px;
-      height: 4px;
-      border-radius: 2px;
-      background: ${COLORS.LIGHT_GREY};
     }
   }
 
@@ -73,6 +60,7 @@ const Separation = styled.div`
   background-image: radial-gradient(${COLORS.SHADOW_BLUE} 2px, white 0%);
   // width, distace
   background-size: 6% 100%;
+  background-position-x: -3px;
 `;
 
 export { Container, Separation };
