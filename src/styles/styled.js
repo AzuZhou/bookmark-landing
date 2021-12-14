@@ -8,7 +8,7 @@ const Main = styled.main`
   position: relative;
   width: 100vw;
   margin: ${HEADER_HEIGHT.MOBILE} 0 0 0;
-  padding: 60px 0;
+  padding: 60px 0 0 0;
 
   > section ~ section {
     margin-top: 80px;

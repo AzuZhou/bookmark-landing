@@ -95,6 +95,11 @@ const GlobalStyle = createGlobalStyle`
   button, a  {
     white-space: nowrap;
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 `;
 
 export default GlobalStyle;

@@ -16,7 +16,6 @@ import { Container, Burger, Logo, Socials } from './styled';
 
 const Header = () => {
   const { settings } = useContext(ContentContext);
-  console.log('settings: ', settings);
   const [isBurgerOpen, handleBurger] = useBurger();
   const { navigationBarLinksCollection, facebookLink, twitterLink } = settings || {};
   const { items } = navigationBarLinksCollection || [];
@@ -24,7 +23,7 @@ const Header = () => {
   return (
     <Container isBurgerOpen={isBurgerOpen}>
       <div>
-        <Logo isBurgerOpen={isBurgerOpen}>
+        <Logo href="#" isBurgerOpen={isBurgerOpen}>
           <LogoIcon />
         </Logo>
 

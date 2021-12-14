@@ -25,10 +25,8 @@ const Container = styled.nav`
 
   ul {
     width: 100%;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    list-style: none;
   }
 
   ${desktopBreakpoint} {

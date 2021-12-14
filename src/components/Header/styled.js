@@ -47,7 +47,7 @@ const Container = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   height: 25px;
 
   svg {
