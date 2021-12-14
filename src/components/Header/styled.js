@@ -28,7 +28,7 @@ const Container = styled.header`
   background-color: ${COLORS.WHITE};
   `};
 
-  > div {
+  > div:first-child {
     height: ${HEADER_HEIGHT.MOBILE};
     width: 100%;
     display: flex;
@@ -41,7 +41,7 @@ const Container = styled.header`
     height: ${HEADER_HEIGHT.DESKTOP};
     flex-direction: row;
 
-    > div {
+    > div:first-child {
       padding: ${PADDING.DESKTOP} 0;
     }
   }
@@ -104,4 +104,17 @@ const Burger = styled.div`
   }
 `;
 
-export { Container, Logo, Burger };
+const Socials = styled.div`
+  position: absolute;
+  bottom: ${PADDING.MOBILE};
+  display: flex;
+
+  a {
+    padding: ${PADDING.MOBILE};
+  }
+
+  ${desktopBreakpoint} {
+    display: none;
+  }
+`;
+export { Container, Logo, Burger, Socials };

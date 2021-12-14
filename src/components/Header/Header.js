@@ -9,19 +9,16 @@ import Navbar from 'components/Navbar';
 import LogoIcon from '../../../public/logo-bookmark.svg';
 import BurgerIcon from '../../../public/icon-hamburger.svg';
 import CloseIcon from '../../../public/icon-close.svg';
-// import FacebookIcon from '../../../public/icon-facebook.svg';
-// import TwitterIcon from '../../../public/icon-twitter.svg';
+import FacebookIcon from '../../../public/icon-facebook.svg';
+import TwitterIcon from '../../../public/icon-twitter.svg';
 
-import { Container, Burger, Logo } from './styled';
+import { Container, Burger, Logo, Socials } from './styled';
 
 const Header = () => {
   const { settings } = useContext(ContentContext);
+  console.log('settings: ', settings);
   const [isBurgerOpen, handleBurger] = useBurger();
-  const {
-    //    logo,
-    navigationBarLinksCollection
-  } = settings || {};
-  //   const { title, url, height, width } = logo || {};
+  const { navigationBarLinksCollection, facebookLink, twitterLink } = settings || {};
   const { items } = navigationBarLinksCollection || [];
 
   return (
@@ -45,6 +42,15 @@ const Header = () => {
       </div>
 
       <Navbar items={items} isBurgerOpen={isBurgerOpen} />
+
+      <Socials>
+        <a href={facebookLink}>
+          <FacebookIcon />
+        </a>
+        <a href={twitterLink}>
+          <TwitterIcon />
+        </a>
+      </Socials>
     </Container>
   );
 };
