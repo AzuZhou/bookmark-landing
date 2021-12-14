@@ -44,7 +44,7 @@ const Header = () => {
         </Burger>
       </div>
 
-      <Navbar items={items} />
+      <Navbar items={items} isBurgerOpen={isBurgerOpen} />
     </Container>
   );
 };

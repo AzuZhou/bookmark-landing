@@ -6,7 +6,7 @@ const Container = styled.a`
   ${buttonStyles}
 
   ${({ isPrimaryCta, isSubmit }) =>
-    isPrimaryCta && isSubmit ? submitButton : isPrimaryCta ? primaryButton : secondaryButton}
+    isSubmit ? submitButton : isPrimaryCta ? primaryButton : secondaryButton}
 `;
 
 export { Container };

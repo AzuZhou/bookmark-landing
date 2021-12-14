@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { desktopBreakpoint } from 'styles/styled';
-import { COLORS, PADDING } from 'styles/constants';
+import { COLORS, HEADER_HEIGHT, PADDING } from 'styles/constants';
 
 const Container = styled.header`
   position: absolute;
@@ -24,20 +24,21 @@ const Container = styled.header`
   background-color: ${COLORS.BACKGROUND_BLUE};
   `
       : `
-  height: 145px;
+  height: ${HEADER_HEIGHT.MOBILE};
   background-color: ${COLORS.WHITE};
   `};
 
   > div {
+    height: ${HEADER_HEIGHT.MOBILE};
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ${PADDING.DESKTOP} 0;
+    padding: ${PADDING.MOBILE} 0;
   }
 
   ${desktopBreakpoint} {
-    height: 145px;
+    height: ${HEADER_HEIGHT.DESKTOP};
     flex-direction: row;
 
     > div {

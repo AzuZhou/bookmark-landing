@@ -85,7 +85,7 @@ const Form = styled.form`
     justify-content: center;
 
     > div {
-      height: 54px;
+      height: 48px;
       max-width: 300px;
     }
   }
@@ -95,7 +95,7 @@ const Input = styled.input`
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 12px 16px;
+  padding: 10px 16px;
 
   border-radius: 4px;
   border: 2px solid transparent;

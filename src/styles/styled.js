@@ -1,25 +1,21 @@
 import styled, { css } from 'styled-components';
 
-import {
-  COLORS,
-  FONT_SIZES
-  //FONT_WEIGHTS
-} from './constants';
+import { COLORS, FONT_SIZES, HEADER_HEIGHT } from './constants';
 
 const desktopBreakpoint = '@media screen and (min-width: 1025px)';
 
 const Main = styled.main`
   position: relative;
   width: 100vw;
-  margin: 145px 0 0 0;
-  /* margin: 40px 0; */
+  margin: ${HEADER_HEIGHT.MOBILE} 0 0 0;
+  padding: 60px 0;
 
   > section ~ section {
     margin-top: 80px;
   }
 
   ${desktopBreakpoint} {
-    /* margin: 60px 0; */
+    margin: ${HEADER_HEIGHT.DESKTOP} 0 0 0;
 
     > section ~ section {
       margin-top: 120px;
@@ -96,7 +92,7 @@ const buttonStyles = css`
   align-items: center;
   width: 100%;
   max-width: ${({ fullWidth }) => (fullWidth ? 'none' : '150px')};
-  padding: 12px 16px;
+  padding: 10px 16px;
 
   border-radius: 4px;
   border: 2px solid transparent;

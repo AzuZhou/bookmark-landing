@@ -7,7 +7,7 @@ const COLORS = {
   WHITE: 'hsl(0, 0%, 100%)',
   LIGHT_GREY: 'hsl(64, 44%, 94%)',
   SHADOW_BLUE: 'hsl(231, 69%, 92%)',
-  BACKGROUND_BLUE: 'rgba(54, 63, 103, 0.9)'
+  BACKGROUND_BLUE: 'rgba(37, 43, 70, 0.94)'
 };
 
 const FONT_SIZES = {
@@ -35,4 +35,9 @@ const PADDING = {
   MOBILE: '30px'
 };
 
-export { COLORS, FONT_SIZES, FONT_WEIGHTS, PADDING };
+const HEADER_HEIGHT = {
+  DESKTOP: '145px',
+  MOBILE: '85px'
+};
+
+export { COLORS, FONT_SIZES, FONT_WEIGHTS, PADDING, HEADER_HEIGHT };

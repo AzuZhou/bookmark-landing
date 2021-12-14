@@ -1,15 +1,27 @@
-import { Container, Item } from './styled';
+// import Button from 'components/shared/Button';
 
-const Navbar = ({ items }) => {
+import { Container, Item, Button } from './styled';
+
+const Navbar = ({ items, isBurgerOpen }) => {
   return (
-    <Container>
+    <Container isBurgerOpen={isBurgerOpen}>
+      <hr />
       <ul>
         {items
-          ? items.map(({ label, isPrimaryCta, link }) => {
-              console.log('isPrimaryCta: ', isPrimaryCta);
+          ? items.map(({ isPrimaryCta, label, link }) => {
+              if (isPrimaryCta)
+                return (
+                  <Item key={label}>
+                    <Button href={link} isBurgerOpen={isBurgerOpen} fullWidth>
+                      {label}
+                    </Button>
+                  </Item>
+                );
+
               return (
                 <Item key={label}>
                   <a href={link}>{label}</a>
+                  <hr />
                 </Item>
               );
             })
