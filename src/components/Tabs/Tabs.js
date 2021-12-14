@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Panel from 'components/Panel';
+import TabPanel from 'components/TabPanel';
 
 import { Container, Tab } from './styled';
 
@@ -26,7 +26,7 @@ const Tabs = ({ tabs }) => {
         ))}
       </div>
 
-      <Panel activeTab={tabs[activeTabKey]} />
+      <TabPanel activeTab={tabs[activeTabKey]} />
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import Detail from 'components/shared/Detail';
 
-const Panel = ({ activeTab }) => {
+const TabPanel = ({ activeTab }) => {
   return <Detail data={activeTab.tabContent} />;
 };
 
-export default Panel;
+export default TabPanel;

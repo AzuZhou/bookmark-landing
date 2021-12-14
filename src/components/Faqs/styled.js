@@ -13,6 +13,7 @@ const Section = styled.section`
   margin: 0 auto;
 
   ${desktopBreakpoint} {
+    width: 50%;
     padding: 0 ${PADDING.DESKTOP};
   }
 `;

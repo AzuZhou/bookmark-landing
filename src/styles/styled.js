@@ -59,7 +59,7 @@ const Info = styled.div`
   }
 
   ${desktopBreakpoint} {
-    max-width: 50%;
+    max-width: ${({ isFullWidth }) => (isFullWidth ? '100%' : '50%')};
     align-items: ${({ isReverse, isCenter }) =>
       isCenter ? 'center' : isReverse ? 'flex-end' : 'flex-start'};
 
