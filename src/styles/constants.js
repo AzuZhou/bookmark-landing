@@ -6,7 +6,8 @@ const COLORS = {
   DARK_BLUE: 'hsl(229, 31%, 21%)',
   WHITE: 'hsl(0, 0%, 100%)',
   LIGHT_GREY: 'hsl(64, 44%, 94%)',
-  SHADOW_BLUE: 'hsl(231, 69%, 92%)'
+  SHADOW_BLUE: 'hsl(231, 69%, 92%)',
+  BACKGROUND_BLUE: 'rgba(54, 63, 103, 0.9)'
 };
 
 const FONT_SIZES = {
@@ -30,8 +31,8 @@ const FONT_WEIGHTS = {
 };
 
 const PADDING = {
-  DESKTOP: '30px',
-  MOBILE: '20px'
+  DESKTOP: '60px',
+  MOBILE: '30px'
 };
 
 export { COLORS, FONT_SIZES, FONT_WEIGHTS, PADDING };

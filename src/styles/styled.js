@@ -11,14 +11,15 @@ const desktopBreakpoint = '@media screen and (min-width: 1025px)';
 const Main = styled.main`
   position: relative;
   width: 100vw;
-  margin: 40px 0;
+  margin: 145px 0 0 0;
+  /* margin: 40px 0; */
 
   > section ~ section {
     margin-top: 80px;
   }
 
   ${desktopBreakpoint} {
-    margin: 60px 0;
+    /* margin: 60px 0; */
 
     > section ~ section {
       margin-top: 120px;
