@@ -71,11 +71,11 @@ const Panel = styled.p`
   `}
 
   color: ${COLORS.GREY};
-  font-size: ${FONT_SIZES.MOBILE.SECONDARY_TEXT};
+  font-size: ${FONT_SIZES.MOBILE.PRIMARY_TEXT};
   line-height: 26px;
 
   ${desktopBreakpoint} {
-    font-size: ${FONT_SIZES.DESKTOP.SECONDARY_TEXT};
+    font-size: ${FONT_SIZES.DESKTOP.PRIMARY_TEXT};
     line-height: 28px;
   }
 `;

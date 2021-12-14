@@ -33,20 +33,8 @@ const Info = styled.div`
   align-items: center;
   gap: 30px;
 
-  h1 {
-    text-align: center;
-    font-size: ${FONT_SIZES.MOBILE.TITLE};
-    line-height: 42px;
-    letter-spacing: 1px;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: ${FONT_SIZES.MOBILE.SUBTITLE};
-    line-height: 32px;
-    letter-spacing: 0.8px;
-  }
-
+  h1,
+  h2,
   p {
     text-align: center;
   }
@@ -101,4 +89,24 @@ const secondaryButton = getButtonStyles(COLORS.LIGHT_GREY, COLORS.DARK_BLUE, fal
 
 const submitButton = getButtonStyles(COLORS.SOFT_RED, COLORS.WHITE, true);
 
-export { desktopBreakpoint, Main, Info, primaryButton, secondaryButton, submitButton };
+const buttonStyles = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: ${({ fullWidth }) => (fullWidth ? 'none' : '150px')};
+  padding: 12px 16px;
+
+  border-radius: 4px;
+  border: 2px solid transparent;
+`;
+
+export {
+  desktopBreakpoint,
+  Main,
+  Info,
+  primaryButton,
+  secondaryButton,
+  submitButton,
+  buttonStyles
+};

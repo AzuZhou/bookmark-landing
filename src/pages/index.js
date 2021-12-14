@@ -3,6 +3,7 @@ import Hero from 'components/Hero';
 import Features from 'components/Features';
 import Extensions from 'components/Extensions';
 import Faqs from 'components/Faqs';
+import Newsletter from 'components/Newsletter';
 
 import { ContentContext } from 'context/ContentContext';
 import { fetchContent } from 'services/cms';
@@ -18,6 +19,7 @@ const Home = ({ content: { page, settings } = {} }) => {
           <Features />
           <Extensions />
           <Faqs />
+          <Newsletter />
         </Main>
       </Layout>
     </ContentContext.Provider>

@@ -31,6 +31,7 @@ const Container = styled.div`
 
     span {
       font-size: ${FONT_SIZES.MOBILE.SECONDARY_TEXT};
+      line-height: 22px;
     }
   }
 
@@ -49,6 +50,7 @@ const Container = styled.div`
 
     span {
       font-size: ${FONT_SIZES.DESKTOP.SECONDARY_TEXT};
+      line-height: 24px;
     }
   }
 `;

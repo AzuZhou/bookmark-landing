@@ -45,7 +45,7 @@ const Tab = styled.button`
     justify-content: center;
     padding: 12px 16px;
 
-    color: ${COLORS.DARK_BLUE};
+    color: ${({ isActive }) => (isActive ? COLORS.DARK_BLUE : COLORS.GREY)};
 
     transition: border-bottom 0.2s linear;
 
