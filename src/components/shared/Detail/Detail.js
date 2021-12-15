@@ -31,7 +31,7 @@ const Detail = ({ data, isHero, isCenter }) => {
     const left = {
       ...sharedStyles,
       left: 0,
-      width: offsetWidth + node.getBoundingClientRect().right * 0.1,
+      width: offsetWidth - node.getBoundingClientRect().right * 0.1,
       borderBottomRightRadius: '50%',
       borderTopRightRadius: '50%'
     };

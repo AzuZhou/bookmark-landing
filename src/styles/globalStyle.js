@@ -100,6 +100,7 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     padding: 0;
   }
+  }
 `;
 
 export default GlobalStyle;
