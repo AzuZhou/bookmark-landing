@@ -15,16 +15,15 @@ const Accordion = ({ faqs }) => {
   return (
     <Container>
       <hr />
-      {faqs
-        ? faqs.map((faq, index) => (
-            <AccordionCollapse
-              isExpanded={index === expandedQuestionKey}
-              key={faq.question}
-              {...faq}
-              handleExpand={() => handleExpand(index)}
-            />
-          ))
-        : null}
+      {faqs &&
+        faqs.map((faq, index) => (
+          <AccordionCollapse
+            isExpanded={index === expandedQuestionKey}
+            key={faq.question}
+            {...faq}
+            handleExpand={() => handleExpand(index)}
+          />
+        ))}
     </Container>
   );
 };

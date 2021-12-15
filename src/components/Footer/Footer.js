@@ -24,17 +24,17 @@ const Footer = () => {
             </Logo>
           </Link>
 
-          <ul>
-            {items
-              ? items.map(({ label, link }) => {
-                  return (
-                    <li key={label}>
-                      <a href={link}>{label}</a>
-                    </li>
-                  );
-                })
-              : null}
-          </ul>
+          {items && (
+            <ul>
+              {items.map(({ label, link }) => {
+                return (
+                  <li key={label}>
+                    <a href={link}>{label}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
 
         <Socials>

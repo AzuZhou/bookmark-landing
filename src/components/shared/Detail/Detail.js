@@ -25,15 +25,14 @@ const Detail = ({ data, isHero, isCenter }) => {
         {isHero ? <h1>{title}</h1> : <h2>{title}</h2>}
         <p>{description}</p>
 
-        {ctAs ? (
+        {ctAs && (
           <div>
             {ctAs.map((cta) => (
               <Button key={cta.label} {...cta} />
             ))}
           </div>
-        ) : null}
+        )}
       </Info>
-
       <Decoration>
         {url && (
           <Img

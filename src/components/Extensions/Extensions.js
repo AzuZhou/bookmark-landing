@@ -20,13 +20,13 @@ const Extensions = () => {
         <p>{description}</p>
       </Info>
 
-      {extensions ? (
+      {extensions && (
         <Cards>
           {extensions.map((ext) => (
             <Card key={ext.title} {...ext} />
           ))}
         </Cards>
-      ) : null}
+      )}
     </Section>
   );
 };
