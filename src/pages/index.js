@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router';
+
 import Layout from 'components/Layout';
 import Hero from 'components/Hero';
 import Features from 'components/Features';
 import Extensions from 'components/Extensions';
 import Faqs from 'components/Faqs';
 import Newsletter from 'components/Newsletter';
+import Loader from 'components/shared/Loader';
 
 import { ContentContext } from 'context/ContentContext';
 import { fetchContent } from 'services/cms';
@@ -11,6 +14,12 @@ import { fetchContent } from 'services/cms';
 import { Main } from 'styles/styled';
 
 const Home = ({ content: { page, settings } = {} }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
+
   return (
     <ContentContext.Provider value={{ page, settings }}>
       <Layout>
@@ -34,7 +43,7 @@ export async function getStaticProps() {
     props: {
       content
     },
-    revalidate: 10
+    revalidate: 60
   };
 }
 

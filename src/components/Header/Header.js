@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Link from 'next/link';
 
 import { ContentContext } from 'context/ContentContext';
 
@@ -23,9 +24,11 @@ const Header = () => {
   return (
     <Container isBurgerOpen={isBurgerOpen}>
       <div>
-        <Logo href="#" isBurgerOpen={isBurgerOpen}>
-          <LogoIcon />
-        </Logo>
+        <Link href="/">
+          <Logo isBurgerOpen={isBurgerOpen}>
+            <LogoIcon />
+          </Logo>
+        </Link>
 
         <Burger>
           {isBurgerOpen ? (

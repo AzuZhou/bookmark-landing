@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Link from 'next/link';
 
 import { ContentContext } from 'context/ContentContext';
 
@@ -17,9 +18,11 @@ const Footer = () => {
     <Container>
       <div>
         <div>
-          <Logo href="#">
-            <LogoIcon />
-          </Logo>
+          <Link href="/">
+            <Logo>
+              <LogoIcon />
+            </Logo>
+          </Link>
 
           <ul>
             {items
