@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS } from 'styles/constants';
+import { COLORS, PADDING } from 'styles/constants';
 import { desktopBreakpoint } from 'styles/styled';
 
 const Container = styled.div`
@@ -10,11 +10,13 @@ const Container = styled.div`
   align-items: center;
   gap: 60px;
 
-  > div {
+  > div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
+    padding: 0 ${PADDING.MOBILE};
 
     > hr {
       width: 100%;
@@ -25,9 +27,10 @@ const Container = styled.div`
   }
 
   ${desktopBreakpoint} {
-    > div {
+    > div:first-child {
       max-width: 50%;
       flex-direction: row;
+      padding: 0 ${PADDING.DESKTOP};
 
       > hr {
         display: none;

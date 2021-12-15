@@ -15,10 +15,12 @@ const Features = () => {
 
   return (
     <Section>
-      <Info isCenter>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </Info>
+      <div>
+        <Info isCenter>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </Info>
+      </div>
 
       <Tabs tabs={tabs} />
     </Section>

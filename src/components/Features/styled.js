@@ -8,12 +8,17 @@ const Section = styled.section`
   align-items: center;
   flex-direction: column;
   gap: 60px;
-  max-width: 1200px;
-  padding: 0 ${PADDING.MOBILE};
   margin: 0 auto;
 
+  > div:first-child {
+    max-width: 1200px;
+    padding: 0 ${PADDING.MOBILE};
+  }
+
   ${desktopBreakpoint} {
-    padding: 0 ${PADDING.DESKTOP};
+    > div:first-child {
+      padding: 0 ${PADDING.DESKTOP};
+    }
   }
 `;
 
