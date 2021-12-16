@@ -12,6 +12,29 @@ const Container = styled.div`
   border-radius: 8px;
   box-shadow: ${COLORS.SHADOW_BLUE} 0px 4px 12px;
 
+  opacity: 0;
+  &:first-child {
+    animation: ${({ startAnimation }) => (startAnimation ? 'appear 1s ease-out forwards' : 'none')};
+  }
+  &:nth-child(2) {
+    animation: ${({ startAnimation }) =>
+      startAnimation ? 'appear 1s 0.2s ease-out forwards' : 'none'};
+  }
+
+  &:last-child {
+    animation: ${({ startAnimation }) =>
+      startAnimation ? 'appear 1s 0.4s ease-out forwards' : 'none'};
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   > div:first-child {
     display: flex;
     flex-direction: column;

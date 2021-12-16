@@ -8,6 +8,18 @@ const Section = styled.section`
   display: flex;
   width: 100%;
 
+  opacity: 0;
+  animation: ${({ startAnimation }) => (startAnimation ? 'appear 1s ease-out forwards' : 'none')};
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   > div {
     display: flex;
     align-items: center;

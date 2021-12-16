@@ -8,11 +8,13 @@ const Section = styled.section`
   align-items: center;
   flex-direction: column;
   gap: 60px;
-  margin: 0 auto;
 
   > div:first-child {
     max-width: 1200px;
     padding: 0 ${PADDING.MOBILE};
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   ${desktopBreakpoint} {

@@ -8,6 +8,7 @@ import { Section, Decoration } from './styled';
 
 const Detail = ({ data, isHero, isCenter }) => {
   const [decoration, setDecoration] = useState({});
+  const [startAnimation, setStartAnimation] = useState(false);
   const imgRef = useRef();
   const { title, description, ctAsCollection, image, imageAlignment } = data || {};
   const { items: ctAs } = ctAsCollection || [];
@@ -56,10 +57,11 @@ const Detail = ({ data, isHero, isCenter }) => {
 
   useEffect(() => {
     handleResize(imgRef.current, window);
+    setStartAnimation(false);
   }, [data]);
 
   return (
-    <Section isReverse={isReverse}>
+    <Section isReverse={isReverse} startAnimation={startAnimation}>
       <div>
         <Info isReverse={isReverse} isCenter={isCenter}>
           {isHero ? <h1>{title}</h1> : <h2>{title}</h2>}
@@ -76,7 +78,14 @@ const Detail = ({ data, isHero, isCenter }) => {
 
         <Decoration ref={imgRef}>
           {url && (
-            <Image width={width} height={height} src={url} alt="" alignment={imageAlignment} />
+            <Image
+              onLoadingComplete={() => !startAnimation && setStartAnimation(true)}
+              width={width}
+              height={height}
+              src={url}
+              alt=""
+              alignment={imageAlignment}
+            />
           )}
 
           {typeof window !== 'undefined' && <div style={decoration} />}
